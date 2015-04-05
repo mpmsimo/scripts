@@ -1,5 +1,5 @@
 #/usr/bin/python
-#sitemap_parse_search.py - Searches locks and combos for matching entries.
+#sitemap_parse_search.py - Searches for matching entries.
 #msimo - 11/02/2014
 
 from bs4 import BeautifulSoup
