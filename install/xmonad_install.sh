@@ -1,6 +1,15 @@
 #!/usr/bin/bash
-# obs_install.sh - Installs Open Broadcaster Software.
+# xmonad_install.sh - Installs xmonad window manage 
 # Author: mpmsimo
-# Created: 5/24/15
-sudo add-apt-repository ppa:obsproject/obs-studio
-sudo apt-get update && sudo apt-get install obs-studio
+# Created: 8/26/15
+
+# Installs xmonad and other helpful packages
+sudo apt-get install xmonad suckless-tools xscreensaver
+
+# If not using Ubuntu you may need to install the dmenu package
+# Install xmobar, a commonly used xmonad status bar
+sudo apt-get install xmobar
+touch ~/.xmobarrc
+
+# Installing Stalonetray (stand-alone tray)
+sudo apt-get install stalonetray
