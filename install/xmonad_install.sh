@@ -13,3 +13,12 @@ touch ~/.xmobarrc
 
 # Installing Stalonetray (stand-alone tray)
 sudo apt-get install stalonetray
+touch ~/.stalonetrayrc
+
+# Create a startup script when an x session is triggered
+touch ~/.xsessionrc
+
+# Create xmonad folder where config files will be stored
+sudo mkdir ~/.xmonad
+cd ~/.xmonad
+touch xmonad.hs
