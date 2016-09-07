@@ -15,5 +15,5 @@ if __name__ == '__main__':
     for i in range(5):
         p = Process(target=worker)
         tasks.append(p)
-        print("Starting thread {}".format(i))
+        print("Starting process {}".format(i))
         p.start()
