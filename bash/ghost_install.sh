@@ -26,6 +26,9 @@ check_for_missing_packages(){
 }
 
 ghost_install(){
+    #Node js version
+    #NPM version
+    ls -s $(which nodejs) /usr/bin/node
     sudo mkdir -p $GHOST_DIR
     cd $WEB_DIR
     #sudo wget $GHOST_ZIP
@@ -38,9 +41,15 @@ ghost_install(){
     # Install example config
     sudo cp config.example.js config.js
 
-    # Use sed to change url, use , instead / as delimeter because urls
+    #TODO: Only replace first occurences
+    # Use sed to change url, use ; instead / as delimeter because urls...
+    # Not global since we do not want to change development url
     echo "Changing blog URL to: $DOMAIN"
-    sudo sed -i -e "s,url\:.*,url\: '$DOMAIN',g" config.js
+    #sudo sed -i -e "s;url\:.*;url\: '$DOMAIN,;" config.js
+
+    # Use sed to change host entry.
+    echo "Changing host entry to: 0.0.0.0"
+    #sudo sed -i -e "s;host\:.*;host\: 0.0.0.0,;" config.js
 }
 
 check_for_missing_packages
