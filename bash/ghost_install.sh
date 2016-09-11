@@ -2,15 +2,17 @@
 #mpmsimo
 #9/9/2016
 
-PACKAGE_ARRAY=(wget aasdf)
+PACKAGE_ARRAY=(curl wget zip nodejs npm build-essential)
 GHOST_ZIP='https://ghost.org/zip/ghost-latest.zip'
 WEB_DIR='/var/www'
 GHOST_DIR='/var/www/ghost'
 DOMAIN='http://blog.mpmsimo.com'
 
 check_for_missing_packages(){
-    # figure out if needed packages are installed
+    # Node.js repo
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 
+    # figure out if needed packages are installed
 	for package in ${PACKAGE_ARRAY[@]};
 	do
         #PKG_SEARCH=$(dpkg -s $package > /dev/null 2>&1)
@@ -36,7 +38,7 @@ ghost_install(){
     cd $GHOST_DIR
 
     # Install node production dependencies
-    #sudo npm install --production
+    sudo npm install --production
 
     # Install example config
     sudo cp config.example.js config.js
