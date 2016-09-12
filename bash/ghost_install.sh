@@ -33,8 +33,8 @@ ghost_install(){
     ls -s $(which nodejs) /usr/bin/node
     sudo mkdir -p $GHOST_DIR
     cd $WEB_DIR
-    #sudo wget $GHOST_ZIP
-    #sudo unzip -d ghost ghost-latest.zip
+    sudo wget $GHOST_ZIP
+    sudo unzip -d ghost ghost-latest.zip
     cd $GHOST_DIR
 
     # Install node production dependencies
