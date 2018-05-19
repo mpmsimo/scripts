@@ -1,0 +1,100 @@
+Name:		pipeline-prod-1500805684-jrmopenpipeline-s465c
+Namespace:	default
+Node:		gke-queueoverflow-pool-1-bc2c37fe-fwpr/10.142.15.214
+Start Time:	Mon, 24 Jul 2017 20:32:55 -0700
+Labels:		allowed_parallel_jobs=6
+		allowed_queue_time=5400
+		app=pipeline
+		branch=None
+		cost_of_delay=550
+		enqueue_handler=MapHandler
+		enqueue_notes=re-enqueued_by_skynet_map_manager_reason_is_dropped_by_cluster
+		enqueue_user=pipeline_dronedeploy.com
+		env=prod
+		expected_duration=10800
+		export_id=
+		flags=None
+		job_type=pipeline
+		map_id=5976a64c1d5611000192092c
+		priority=85096451
+		processing_options=None
+		queue=large
+		rateLimit=false
+		role=business-paid
+		scheduler=priority
+		session=1500805684_JRMOPENPIPELINE
+		username=jrm_everythingissomewhere.com
+Annotations:	dronedeploy.com/priority=85096451
+		dronedeploy.com/rateLimit=false
+Status:		Succeeded
+IP:		10.6.99.5
+Containers:
+  pipeline:
+    Container ID:	docker://9669baed72b6523d147c4327a024a97da4b5f9e53a39f15087716f7c420bbc2d
+    Image:		dronedeploy/pipeline:prod
+    Image ID:		docker://sha256:36162bdfd3ccaa9dc1517580d9199d326d4afb8b423211e3e2693f74dbb21feb
+    Port:		<none>
+    State:		Terminated
+      Reason:		Completed
+      Exit Code:	0
+      Started:		Mon, 01 Jan 0001 00:00:00 +0000
+      Finished:		Tue, 25 Jul 2017 00:27:21 -0700
+    Ready:		False
+    Restart Count:	0
+    Limits:
+      cpu:	22
+      memory:	60000Mi
+    Requests:
+      cpu:	15
+      memory:	60000Mi
+    Environment:
+      DDENQUEUEUSER:		pipeline@dronedeploy.com
+      DDENQUEUEHANDLER:		MapHandler
+      DDJOBTYPE:		pipeline
+      KUBE_MEM_LIMIT:		60000Mi
+      DDSESSION:		1500805684_JRMOPENPIPELINE
+      DDENV:			prod
+      DDENQUEUENOTES:		re-enqueued by skynet map manager reason is dropped by cluster
+      KUBE_MEM_REQUEST:		60000Mi
+      KUBE_CPU_LIMIT:		22.0
+      DDMAPID:			5976a64c1d5611000192092c
+      DDRUN:			1
+      DDBRANCH:			prod
+      KUBE_CPU_REQUEST:		15.0
+      DDALLOWEDPARALLELJOBS:	6
+      DDUSERNAME:		jrm@everythingissomewhere.com
+      DDROLE:			business-paid
+      KUBE_POD_IP:		 (v1:status.podIP)
+      KUBE_POD_NAME:		pipeline-prod-1500805684-jrmopenpipeline-s465c (v1:metadata.name)
+      KUBE_POD_NAMESPACE:	default (v1:metadata.namespace)
+      KUBE_CLUSTER:		overflow
+    Mounts:
+      /common-secrets from common-secrets (ro)
+      /out from out (rw)
+      /photogrammetry from photogrammetry (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from pipeline-token-3b8hd (ro)
+Conditions:
+  Type		Status
+  Initialized 	True 
+  Ready 	False 
+  PodScheduled 	True 
+Volumes:
+  out:
+    Type:	EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:	
+  common-secrets:
+    Type:	ConfigMap (a volume populated by a ConfigMap)
+    Name:	common-prod
+    Optional:	false
+  photogrammetry:
+    Type:	EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:	
+  pipeline-token-3b8hd:
+    Type:	Secret (a volume populated by a Secret)
+    SecretName:	pipeline-token-3b8hd
+    Optional:	false
+QoS Class:	Burstable
+Node-Selectors:	<none>
+Tolerations:	node.alpha.kubernetes.io/notReady:NoExecute for 300s
+		node.alpha.kubernetes.io/unreachable:NoExecute for 300s
+Events:		<none>
